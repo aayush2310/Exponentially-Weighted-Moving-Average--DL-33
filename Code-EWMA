@@ -1,0 +1,23 @@
+import pandas as pd
+import numpy as np
+
+import matplotlib.pyplot as plt
+
+df=pd.read_csv('DailyDelhiClimate.csv')
+
+df=df[['date','meantemp']]
+df
+
+plt.scatter(df['date'],df['meantemp'],color='red')
+
+x1=df['meantemp'].ewm(alpha=0.9).mean()
+
+x1
+
+df['ewma']=x1
+df
+
+plt.scatter(df['date'],df['meantemp'],color='red')
+plt.plot(df['date'],x1,color='black',label='alpha=0.9')
+plt.legend()
+plt.show()
