@@ -1,0 +1,15 @@
+EWMA is a technique using which we find trends/pattern in a time series based data.
+Used in time-series forcasting,company's financial forcasting,signal processing,building cool optimizers in DL
+
+while calculating EWMA,we value the points which have come recently in the past more than the older points.
+as time will pass,the weightage of the point will get reduced.
+
+Impact of beta:-
+we assume that we are calculating average of the last 1/(1-beta)  days.
+
+The more we take the value of beta,the more we are giving value to our old points and vice-versa.
+The less beta-more value to current point-what happened today is affecting more this guy-he is moody-spikey graph observed
+ 
+beta generally taken as 0.9
+
+alpha=1-beta
